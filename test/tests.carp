@@ -1,0 +1,10 @@
+(load "Test.carp")
+(use Test)
+
+(deftest test
+  (assert-equal test
+                "TODO"
+                "Implement me"
+                "TODO: implement me"
+  )
+)

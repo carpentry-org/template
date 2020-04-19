@@ -1,0 +1,5 @@
+(defmodule MyMod
+  (defn myfun [] ())
+)
+
+(macro-error "TODO: implement me!")
