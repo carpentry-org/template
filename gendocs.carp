@@ -1,0 +1,22 @@
+(load "main.carp")
+
+(Project.config "title" "My Awesome Project")
+(Project.config "docs-directory" "./docs/")
+(Project.config "docs-logo" "")
+(Project.config "docs-styling" "style.css")
+
+; useful if you only have 1 module
+; (Project.config "docs-generate-index" false)
+
+; useful if you have multiple modules and navigation
+(Project.config "docs-prelude" "This is my awesome project, and this
+is going on the *front page*!
+
+Example:
+```
+I can write markdown here!
+````
+")
+(save-docs MyModule1 MyModule2)
+
+(quit)
