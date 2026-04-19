@@ -1,10 +1,12 @@
+(load "../main.carp")
 (load "Test.carp")
 (use Test)
+(use MyMod)
 
 (deftest test
   (assert-equal test
-                "TODO"
-                "Implement me"
-                "TODO: implement me"
+                "Hello, Carp!"
+                &(greet "Carp")
+                "greet returns a friendly string"
   )
 )

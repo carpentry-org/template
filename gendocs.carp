@@ -15,8 +15,8 @@ is going on the *front page*!
 Example:
 ```
 I can write markdown here!
-````
+```
 ")
-(save-docs MyModule1 MyModule2)
+(save-docs MyMod)
 
 (quit)

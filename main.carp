@@ -1,5 +1,10 @@
 (defmodule MyMod
+  (doc greet "returns a friendly greeting for `name`.")
+  (defn greet [name]
+    (if (= name "Carp")
+      @"Hello, Carp!"
+      @"Hello!"))
+
+  (doc myfun "is a tiny no-op function used by tests.")
   (defn myfun [] ())
 )
-
-(macro-error "TODO: implement me!")
