@@ -5,9 +5,11 @@ You should be able to reuse its structure for your projects!
 
 ## Overview
 
-This template comes with a simple entrypoint called `main.carp`. This is the
-file that people will load when they first load your project. It doesn’t
-currently compile—can you find out why?
+This template comes with a simple entrypoint called `main.carp`. **Rename this
+file to match your module name** (e.g. `my-mod.carp` for a module called
+`MyMod`). This is the convention used by carpentry-org packages and makes your
+library easier to discover. Remember to update the `(load ...)` paths in
+`gendocs.carp` and `test/tests.carp` when you rename it.
 
 We also have some tests. They reside in `test/tests.carp`. If we run them using
 `carp -x test/tests.carp`, they fail! Please write some useful tests for your
@@ -18,7 +20,8 @@ invoke it by calling `carp gendocs.carp`) will generate documentation from the
 docstrings of your functions and modules, and put it in the `docs/` directory.
 You can style and customize it by editing the CSS or fiddling with the
 configuration options in `gendocs.carp`. They should be pretty
-self-explanatory.
+self-explanatory. Make sure to update `docs-url` in `gendocs.carp` to point to
+your repository.
 
 <hr/>
 
