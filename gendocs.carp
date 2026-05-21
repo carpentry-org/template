@@ -3,6 +3,7 @@
 (Project.config "title" "My Awesome Project")
 (Project.config "docs-directory" "./docs/")
 (Project.config "docs-logo" "")
+(Project.config "docs-url" "https://github.com/your-user/your-project")
 (Project.config "docs-styling" "style.css")
 
 ; useful if you only have 1 module
