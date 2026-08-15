@@ -5,23 +5,42 @@ You should be able to reuse its structure for your projects!
 
 ## Overview
 
-This template comes with a simple entrypoint called `main.carp`. **Rename this
-file to match your module name** (e.g. `my-mod.carp` for a module called
-`MyMod`). This is the convention used by carpentry-org packages and makes your
-library easier to discover. Remember to update the `(load ...)` paths in
-`gendocs.carp` and `test/tests.carp` when you rename it.
+The module lives in `my-mod.carp`, named after the `MyMod` module it holds.
+That is the convention the carpentry-org packages follow, so **rename both the
+file and the module** for your own library. Four places refer to the name and
+need to change with it:
 
-We also have some tests. They reside in `test/tests.carp`. If we run them using
-`carp -x test/tests.carp`, they fail! Please write some useful tests for your
-awesome library!
+- `test/my-mod.carp`, which loads it
+- `gendocs.carp`, which loads it and sets the docs title
+- `.github/workflows/ci.yml`, which runs the test file
+- the module's own doc string in `my-mod.carp`
 
-Finally, we can generate documentation. The script `gendocs.carp` (you can
-invoke it by calling `carp gendocs.carp`) will generate documentation from the
-docstrings of your functions and modules, and put it in the `docs/` directory.
-You can style and customize it by editing the CSS or fiddling with the
-configuration options in `gendocs.carp`. They should be pretty
-self-explanatory. Make sure to update `docs-url` in `gendocs.carp` to point to
-your repository.
+`my-mod.carp` also shows the two definition forms you will use most: `defn`
+for public functions, each with a `doc` string, and `defn-` for helpers that
+should stay inside the module and out of the generated docs.
+
+## Tests
+
+Tests live in `test/my-mod.carp` and run with `carp -x test/my-mod.carp`. The
+two that ship here pass, so a red suite means you broke something. Replace
+them with tests for your own library.
+
+## Documentation
+
+`carp -x gendocs.carp` generates documentation from the doc strings of your
+functions and modules and writes it to `docs/`. Style it by editing the CSS or
+the configuration options in `gendocs.carp`, which should be pretty
+self-explanatory. Set `docs-url` to your repository, and note that `title`
+also names the generated index page. A single-module project does not need
+that index at all; uncomment `docs-generate-index` once yours is one.
+
+## CI
+
+The workflow runs the tests, then lints with
+[angler](https://github.com/carpentry-org/angler) and checks formatting with
+[carp-fmt](https://github.com/carpentry-org/carp-fmt), then generates the
+docs. Run `carp-fmt --check` and `angler` locally before pushing to keep it
+green.
 
 <hr/>
 

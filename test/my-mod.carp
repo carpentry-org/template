@@ -1,0 +1,11 @@
+(load "Test.carp")
+(load "../my-mod.carp")
+
+(use-all MyMod Test)
+
+(deftest test
+  (assert-equal test "Hello, Carp!" &(greet "Carp") "greet knows Carp")
+  (assert-equal test
+    "Hello!"
+    &(greet "world")
+    "greet falls back to a plain hello"))

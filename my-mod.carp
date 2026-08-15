@@ -1,0 +1,25 @@
+(doc MyMod "is a template module you should replace with your own.
+
+## Installation
+
+```
+(load \"git@github.com:your-user/your-project@0.1.0\")
+```
+
+## Usage
+
+```
+(MyMod.greet \"Carp\") ; => \"Hello, Carp!\"
+```
+
+This file is named after the module it holds (`MyMod` lives in
+`my-mod.carp`), which is the convention the carpentry-org packages
+follow. When you rename it, rename `test/my-mod.carp` with it and update
+the paths in `gendocs.carp` and `.github/workflows/ci.yml`.")
+(defmodule MyMod
+  ; defn- is sugar for (private f) (hidden f) (defn f ...): the helper
+  ; stays inside the module and out of the generated docs
+  (defn- salutation [name] (if (= name "Carp") @"Hello, Carp!" @"Hello!"))
+
+  (doc greet "returns a friendly greeting for `name`.")
+  (defn greet [name] (salutation name)))

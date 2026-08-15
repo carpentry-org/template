@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="content">
+            <div class="logo">
+                <a href="https://github.com/your-user/your-project">
+                    <img src="">
+                </a>
+                <div class="title">
+                    my-project
+                </div>
+                <div class="index">
+                    <ul>
+                        <li>
+                            <a href="MyMod.html">
+                                MyMod
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="module">
+                <h1>
+                    MyMod
+                </h1>
+                <div class="module-description">
+                    <p>is a template module you should replace with your own.</p>
+<h2>Installation</h2>
+<pre><code>(load &quot;git@github.com:your-user/your-project@0.1.0&quot;)
+</code></pre>
+<h2>Usage</h2>
+<pre><code>(MyMod.greet &quot;Carp&quot;) ; =&gt; &quot;Hello, Carp!&quot;
+</code></pre>
+<p>This file is named after the module it holds (<code>MyMod</code> lives in
+<code>my-mod.carp</code>), which is the convention the carpentry-org packages
+follow. When you rename it, rename <code>test/my-mod.carp</code> with it and update
+the paths in <code>gendocs.carp</code> and <code>.github/workflows/ci.yml</code>.</p>
+
+                </div>
+                <div class="binder">
+                    <a class="anchor" href="#greet">
+                        <h3 id="greet">
+                            greet
+                        </h3>
+                    </a>
+                    <div class="description">
+                        defn
+                    </div>
+                    <p class="sig">
+                        (Fn [(Ref String a)] String)
+                    </p>
+                    <pre class="args">
+                        (greet name)
+                    </pre>
+                    <p class="doc">
+                        <p>returns a friendly greeting for <code>name</code>.</p>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
